@@ -34,7 +34,7 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               const SizedBox(height: 20),
               LinkWidget(
                 onTap: () => context.go('/loupstibook'),
-                text: "loupstibook_title".i18n(),
+                text: "loupstibook".i18n(),
               ),
             ],
           ),
