@@ -49,7 +49,7 @@ class _MyAppState extends State<MyApp> {
               return MarkdownPage(
                   title: "${state.params["app_name"]?.i18n()} - ${"Privacy".i18n()}",
                   assetName:
-                      "${state.params["app_name"]}/${state.params["lang"]}/${state.params["page_name"]}.md");
+                      "assets/${state.params["app_name"]}/${state.params["lang"]}/${state.params["page_name"]}.md");
             },
           ),
         ],

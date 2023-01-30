@@ -44,3 +44,6 @@ flutter:
   assets:
     - assets/i18n/
     - assets/loupstibook/
+    - assets/loupstibook/en/
+    - assets/loupstibook/fr/
+    - assets/loupstibook/pt/

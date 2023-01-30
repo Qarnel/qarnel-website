@@ -1,6 +1,6 @@
 {
-    "name": "website",
-    "short_name": "website",
+    "name": "Qarnel",
+    "short_name": "Qarnel",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

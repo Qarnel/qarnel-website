@@ -24,7 +24,6 @@ class _AppBarWidgetState extends State<AppBarWidget> {
   @override
   PreferredSizeWidget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: 70,
       backgroundColor: Theme.of(context).bottomAppBarColor,
       elevation: 0,
       centerTitle: true,
