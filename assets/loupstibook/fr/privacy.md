@@ -1,6 +1,6 @@
 # Polique de confidentialité
 
-LoupstiBook est un application pour gérer la bibliothèque d'une école.
+LoupstiBook est une application pour gérer la bibliothèque d'une école.
 
 Cette application peut être installée sur un appareil Android.
 

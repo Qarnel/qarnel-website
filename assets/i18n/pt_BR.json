@@ -1,11 +1,10 @@
 {
-    "phrase_flutter": "O mais legal é o Flutter !",
+    "phrase_flutter": "Bem-vindo ao site do Qarnel !!!",
     "Code": "Codigo",
     "Contact": "Contacto",
     "Privacy": "Política de Privacidade",
     "Error": "Error",
     "loupstibook": "Loupsti'Book",
     "loupstibook_description": "Loupsti'Book é uma aplicação para gerir uma biblioteca escolar.",
-    "loupstibook_screenshot_home": "assets/loupstibook/fr/screenshot_home.jpg",
-    "loupstibook_privacy": "/loupstibook/fr/privacy"
+    "loupstibook_screenshot_home": "assets/loupstibook/fr/screenshot_home.jpg"
 }

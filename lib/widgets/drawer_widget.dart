@@ -1,3 +1,6 @@
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:js' as js;
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:localization/localization.dart';
@@ -26,15 +29,31 @@ class _DrawerWidgetState extends State<DrawerWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               LinkWidget(
-                onTap: () => context.go('/'),
+                onTap: () => context.go("/"),
                 text: "QARNEL",
               ),
               const SizedBox(height: 20),
               const Divider(),
               const SizedBox(height: 20),
               LinkWidget(
-                onTap: () => context.go('/loupstibook'),
+                onTap: () => context.go("/loupstibook"),
                 text: "loupstibook".i18n(),
+              ),
+              const SizedBox(height: 20),
+              const Divider(),
+              const SizedBox(height: 20),
+              LinkWidget(
+                icon: const Icon(Icons.code_rounded),
+                text: "Code".i18n(),
+                onTap: () => js.context.callMethod(
+                    'open', ['https://github.com/Qarnel/qarnel-website']),
+              ),
+              const SizedBox(height: 20),
+              LinkWidget(
+                icon: const Icon(Icons.mail_rounded),
+                text: "Contact".i18n(),
+                onTap: () => js.context
+                    .callMethod('open', ['mailto:qarnelcom@gmail.com']),
               ),
             ],
           ),

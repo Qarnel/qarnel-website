@@ -1,11 +1,10 @@
 {
-    "phrase_flutter": "Flutter is the coolest !",
+    "phrase_flutter": "Welcome to Qarnel website !!!",
     "Code": "Code",
     "Contact": "Contact",
     "Privacy": "Privacy Policy",
     "Error": "Error",
     "loupstibook": "Loupsti'Book",
     "loupstibook_description": "Loupsti'Book is an application to manage a school library.",
-    "loupstibook_screenshot_home": "assets/loupstibook/en/screenshot_home.jpg",
-    "loupstibook_privacy": "/loupstibook/en/privacy"
+    "loupstibook_screenshot_home": "assets/loupstibook/en/screenshot_home.jpg"
 }

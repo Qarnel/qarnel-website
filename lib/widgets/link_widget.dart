@@ -52,6 +52,9 @@ class _LinkWidgetState extends State<LinkWidget> {
                 ? IconButton(
                     onPressed: widget.onTap,
                     icon: widget.icon!,
+                    color: _isHovering
+                        ? Theme.of(context).primaryTextTheme.overline!.color
+                        : Theme.of(context).primaryTextTheme.button!.color,
                   )
                 : const SizedBox(),
             widget.text != null

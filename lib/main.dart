@@ -25,9 +25,21 @@ class MyApp extends StatefulWidget {
   @override
   // ignore: library_private_types_in_public_api
   _MyAppState createState() => _MyAppState();
+
+  // ignore: library_private_types_in_public_api
+  static _MyAppState? of(BuildContext context) =>
+      context.findAncestorStateOfType<_MyAppState>();
 }
 
 class _MyAppState extends State<MyApp> {
+  Locale? _locale;
+
+  void setLocale(Locale value) {
+    setState(() {
+      _locale = value;
+    });
+  }
+
   /// The route configuration.
   final GoRouter routerConfig = GoRouter(
     routes: <RouteBase>[
@@ -36,23 +48,32 @@ class _MyAppState extends State<MyApp> {
         builder: (BuildContext context, GoRouterState state) {
           return const HomePage();
         },
-        routes: <RouteBase>[
-          GoRoute(
-            path: LoupstiBookPage.routeName,
-            builder: (BuildContext context, GoRouterState state) {
-              return LoupstiBookPage();
-            },
-          ),
-          GoRoute(
-            path: ":app_name/:lang/:page_name",
-            builder: (BuildContext context, GoRouterState state) {
-              return MarkdownPage(
-                  title: "${state.params["app_name"]?.i18n()} - ${"Privacy".i18n()}",
-                  assetName:
-                      "assets/${state.params["app_name"]}/${state.params["lang"]}/${state.params["page_name"]}.md");
-            },
-          ),
-        ],
+      ),
+      GoRoute(
+        path: "/:app_name",
+        builder: (BuildContext context, GoRouterState state) {
+          String? appName = state.params["app_name"];
+          if (appName == LoupstiBookPage.routeName) {
+            return LoupstiBookPage();
+          } else {
+            return const HomePage();
+          }
+        },
+      ),
+      GoRoute(
+        path: "/:app_name/privacy",
+        builder: (BuildContext context, GoRouterState state) {
+          String? appName = state.params["app_name"];
+          if (appName != null) {
+            String lang = Localizations.localeOf(context).languageCode;
+            return MarkdownPage(
+              title: "${appName.i18n()} - ${"Privacy".i18n()}",
+              assetName: "assets/$appName/$lang/privacy.md",
+            );
+          } else {
+            return const HomePage();
+          }
+        },
       ),
     ],
   );
@@ -66,12 +87,14 @@ class _MyAppState extends State<MyApp> {
       themeMode: EasyDynamicTheme.of(context).themeMode,
       title: 'Qarnel',
       routerConfig: routerConfig,
+      locale: _locale,
       supportedLocales: const [
         Locale('en', 'US'),
         Locale('fr', 'FR'),
         Locale('pt', 'BR'),
       ],
       localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         LocalJsonLocalization.delegate,
       ],

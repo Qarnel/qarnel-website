@@ -21,7 +21,7 @@ class _LoupstiBookPageState extends State<LoupstiBookPage> {
       title: "loupstibook".i18n(),
       description: "loupstibook_description".i18n(),
       imageAsset: "loupstibook_screenshot_home".i18n(),
-      privacyPage: "loupstibook_privacy".i18n(),
+      privacyPage: "/loupstibook/privacy",
     );
   }
 }
