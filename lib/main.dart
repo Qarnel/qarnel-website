@@ -42,6 +42,7 @@ class _MyAppState extends State<MyApp> {
 
   /// The route configuration.
   final GoRouter routerConfig = GoRouter(
+    initialLocation: HomePage.routeName,
     routes: <RouteBase>[
       GoRoute(
         path: HomePage.routeName,
@@ -77,7 +78,7 @@ class _MyAppState extends State<MyApp> {
       ),
     ],
   );
-
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
