@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+// ignore: depend_on_referenced_packages
+import 'package:markdown/markdown.dart' as md;
 import 'package:localization/localization.dart';
 
 import '../widgets/page_widget.dart';
@@ -41,6 +43,13 @@ class _MarkdownPageState extends State<MarkdownPage> {
                     h2: const TextStyle(fontFamily: 'Montserrat'),
                     textScaleFactor: 1.2,
                     p: const TextStyle(fontFamily: 'Montserrat'),
+                  ),
+                  extensionSet: md.ExtensionSet(
+                    md.ExtensionSet.gitHubFlavored.blockSyntaxes,
+                    [
+                      md.EmojiSyntax(),
+                      ...md.ExtensionSet.gitHubFlavored.inlineSyntaxes
+                    ],
                   ),
                 );
               }

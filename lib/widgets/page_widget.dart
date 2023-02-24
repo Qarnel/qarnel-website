@@ -29,10 +29,10 @@ class _PageWidgetState extends State<PageWidget> {
     var screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
-      extendBodyBehindAppBar: false,
+      //backgroundColor: Theme.of(context).backgroundColor,
+      //extendBodyBehindAppBar: false,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).bottomAppBarColor,
+        //backgroundColor: Theme.of(context).bottomAppBarColor,
         centerTitle: true,
         title: Text(
           widget.title,
@@ -61,10 +61,10 @@ class _PageWidgetState extends State<PageWidget> {
         child: Column(
           children: <Widget>[
             Expanded(
-              child: SingleChildScrollView(
-                physics: const ClampingScrollPhysics(),
+              //child: SingleChildScrollView(
+              //  physics: const ClampingScrollPhysics(),
                 child: widget.child,
-              ),
+              //),
             ),
             const FooterWidget(),
           ],
