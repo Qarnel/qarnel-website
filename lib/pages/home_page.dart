@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     return PageWidget(
       title: widget.title,
       child: Align(
-        alignment: Alignment.center,
+        alignment: Alignment.topCenter,
         child: Text(
           "phrase_flutter".i18n(),
           style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
