@@ -12,6 +12,7 @@ import 'pages/markdown_page.dart';
 void main() {
   LocalJsonLocalization.delegate.directories.clear();
   LocalJsonLocalization.delegate.directories.add("assets/i18n/");
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(
     EasyDynamicThemeWidget(
       child: const MyApp(),
@@ -78,7 +79,7 @@ class _MyAppState extends State<MyApp> {
       ),
     ],
   );
-  
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
